@@ -1,8 +1,6 @@
 
----
 
-````markdown
-# 🛠️ Detailed Change Log: Line-by-Line Fixes (Bank Account Management System)
+# 🛠️ Detailed Change Log: Line-by-Line Fixes ()
 
 This changelog documents each specific code change made to improve, fix, and enhance the original C program.
 
@@ -14,16 +12,18 @@ This changelog documents each specific code change made to improve, fix, and enh
 
 ### 1. 🔁 Replaced `feof()` Usage in `textFile()`
 
-- **Original (Line ~76):**
+* **Original (Line \~76):**
+
   ```c
   while (!feof(readPtr))
-````
+  ```
 
 * **Changed To:**
 
   ```c
   while ((result = fread(&client, sizeof(struct clientData), 1, readPtr)) == 1)
   ```
+
 * **Why:** Prevents reading garbage data at the end of file.
 
 ---
@@ -35,11 +35,13 @@ This changelog documents each specific code change made to improve, fix, and enh
   ```c
   exit(-1);
   ```
+
 * **Changed To:**
 
   ```c
   exit(EXIT_FAILURE);
   ```
+
 * **Why:** `EXIT_FAILURE` is the portable standard defined in `<stdlib.h>`.
 
 ---
@@ -52,6 +54,7 @@ This changelog documents each specific code change made to improve, fix, and enh
   #include <stdio.h>
   #include <stdlib.h>
   ```
+
 * **Changed To:**
 
   ```c
@@ -59,6 +62,7 @@ This changelog documents each specific code change made to improve, fix, and enh
   #include <stdlib.h>
   #include <string.h>
   ```
+
 * **Why:** Anticipates future use of string functions like `strcpy`, `strcmp`.
 
 ---
@@ -123,18 +127,20 @@ This changelog documents each specific code change made to improve, fix, and enh
 
 ---
 
-### 6. ❗ Fixed fseek() Signed/Unsigned Overflow Warning
+### 6. ❗ Fixed `fseek()` Signed/Unsigned Overflow Warning
 
 * **Original (Line \~112):**
 
   ```c
   fseek(fPtr, -sizeof(struct clientData), SEEK_CUR);
   ```
+
 * **Changed To:**
 
   ```c
   fseek(fPtr, -(long)sizeof(struct clientData), SEEK_CUR);
   ```
+
 * **Why:** Avoids `Woverflow` warning and undefined behavior by casting `size_t` to `long`.
 
 ---
@@ -162,4 +168,3 @@ All changes make the code:
 | 245+              | `initializeFile()` function      | Generates empty records if file absent |
 
 ---
-
