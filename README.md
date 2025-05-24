@@ -1,6 +1,3 @@
-Here's a **README-style analysis** of the provided C code. Each section and line/block is classified according to the **appropriate Unit (I to V)** based on the *“Programming in C”* syllabus you shared.
-
----
 
 # 📘 Bank Account Management System (C Language)
 
