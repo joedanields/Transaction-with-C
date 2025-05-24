@@ -112,6 +112,3 @@ argc, argv                                                 // Command-line argum
 * **Pointers**: File pointers and memory addressing
 * **User Interaction**: Menu-driven input system
 
----
-
-Let me know if you'd like this converted into a `README.md` file with markdown formatting or want unit-based color labels for GitHub highlighting.
